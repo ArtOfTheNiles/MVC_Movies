@@ -1,2 +1,8 @@
 # Packages
-*Vidly/packages/*
+
+
+packages/
+.vs/
+Vidly/obj
+Vidly/bin
+Vidly.Tests/
