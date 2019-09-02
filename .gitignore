@@ -1,8 +1,14 @@
 # Packages
 
-
 packages/
 .vs/
 Vidly/obj
 Vidly/bin
 Vidly.Tests/
+
+# Database files
+
+*.dbmdl
+*.mdf
+*.ldf
+*.Database.dbmdl
