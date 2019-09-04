@@ -6,3 +6,23 @@
 }
 
 <h2>@Model.Name</h2>
+<ul>
+    <li>Username: @Model.Username</li>
+    <li>Membership Type: @Model.MembershipType.Name</li>
+
+    @if (Model.Birthdate.HasValue)
+    {
+        <li>Date of Birth: @Model.Birthdate.Value.ToShortDateString()</li>
+    }
+
+    @if (Model.IsSubscribedToNewsletter)
+    {
+        <li>This customer is subscribed to our newsletter.</li>
+    }
+    else
+    {
+        <li><i>This customer is not subscribed to our newsletter.</i></li>
+    }
+
+
+</ul>

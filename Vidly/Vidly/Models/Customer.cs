@@ -23,6 +23,8 @@ namespace Vidly.Models
         [Required]
         public byte MembershipTypeId { get; set; }
 
+        public DateTime? Birthdate { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Username { get; set; }
