@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Vidly.Models
 {
-    public class VidlyDbContext : DbContext
+    public class VidlyDbContext : ApplicationDbContext
     {
-        public VidlyDbContext()
-        {
-
-        }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Movie> Movies { get; set; }
+        //This is an empty class for migrations because I did not understand the identity model earlier.
     }
 }
