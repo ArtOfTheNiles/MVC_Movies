@@ -496,33 +496,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909020504155_InitialModel.cs" />
-    <Compile Include="Migrations\201909020504155_InitialModel.Designer.cs">
-      <DependentUpon>201909020504155_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201909040638058_InitialModel.cs" />
+    <Compile Include="Migrations\201909040638058_InitialModel.Designer.cs">
+      <DependentUpon>201909040638058_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909020518305_AddSubscriptionToCustomer.cs" />
-    <Compile Include="Migrations\201909020518305_AddSubscriptionToCustomer.Designer.cs">
-      <DependentUpon>201909020518305_AddSubscriptionToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909020523312_AddMembershipToCustomer.cs" />
-    <Compile Include="Migrations\201909020523312_AddMembershipToCustomer.Designer.cs">
-      <DependentUpon>201909020523312_AddMembershipToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909020532048_PopulateMembershipTypesInDb.cs" />
-    <Compile Include="Migrations\201909020532048_PopulateMembershipTypesInDb.Designer.cs">
-      <DependentUpon>201909020532048_PopulateMembershipTypesInDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909020551596_ApplyAnnotationsToCustomerName.cs" />
-    <Compile Include="Migrations\201909020551596_ApplyAnnotationsToCustomerName.Designer.cs">
-      <DependentUpon>201909020551596_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\VidlyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -531,6 +515,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DefaultConnection.mdf" />
+    <Content Include="App_Data\DefaultConnection_log.ldf">
+      <DependentUpon>DefaultConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -622,7 +610,9 @@
     <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201909040638058_InitialModel.resx">
+      <DependentUpon>201909040638058_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -636,23 +626,6 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909020504155_InitialModel.resx">
-      <DependentUpon>201909020504155_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909020518305_AddSubscriptionToCustomer.resx">
-      <DependentUpon>201909020518305_AddSubscriptionToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909020523312_AddMembershipToCustomer.resx">
-      <DependentUpon>201909020523312_AddMembershipToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909020532048_PopulateMembershipTypesInDb.resx">
-      <DependentUpon>201909020532048_PopulateMembershipTypesInDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909020551596_ApplyAnnotationsToCustomerName.resx">
-      <DependentUpon>201909020551596_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
