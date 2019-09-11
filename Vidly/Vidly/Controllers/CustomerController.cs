@@ -43,6 +43,8 @@ namespace Vidly.Controllers
             }
             else
             {
+                //Explicit data writing to avoid malicious activity
+
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
                 customerInDb.Name = customer.Name;
                 customerInDb.Username = customer.Username;
